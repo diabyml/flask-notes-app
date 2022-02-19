@@ -1,0 +1,9 @@
+{% extends "base.html" %} {% block title %}
+<section>
+  <div class="container">
+    <h2>{{note.title}}</h2>
+    <p>{{note.description}}</p>
+    <p>Date created: {{note.time_created}}</p>
+  </div>
+</section>
+{% endblock %}

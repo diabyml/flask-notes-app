@@ -1,4 +1,5 @@
 from . import db
+from flask_sqlalchemy import sqlalchemy
 
 # User:  id username pwd_hash    --> sqlalchemy auto-generated:  notes
 # Note: id title description user_id --> sqlalchemy auto-generated: user
@@ -18,6 +19,7 @@ class Note(db.Model):
     title = db.Column(db.String(64))
     description = db.Column(db.Text())
     user_id = db.Column(db.Integer,db.ForeignKey('users.id'))
+    time_created = sqlalchemy.Column(sqlalchemy.DateTime(timezone=True), server_default=sqlalchemy.sql.func.now())
 
     def __repr__(self):
         return f"Note: {self.id} {self.title} {self.description}"

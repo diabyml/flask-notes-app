@@ -17,6 +17,9 @@
             <h1>Notes App</h1>
           </a>
         </div>
+        <div>
+          <div><a href="{{ url_for('note.add') }}">Add New Note</a></div>
+        </div>
         {% if session.get('current_user') %}
         <div>
           <a href="{{ url_for('auth.logout') }}">Logout</a>

@@ -1,0 +1,25 @@
+{% extends "base.html" %} {% block title %}
+<section>
+  <div class="container">
+    <h2>Add New Note</h2>
+
+    <form action="{{ url_for('note.add') }}" method="post">
+      <div>
+        <input type="text" name="title" placeholder="Title" />
+      </div>
+      <div>
+        <textarea
+          name="description"
+          id="description"
+          cols="30"
+          rows="10"
+          placeholder="Description..."
+        ></textarea>
+      </div>
+      <div>
+        <input type="submit" value="Add Note" />
+      </div>
+    </form>
+  </div>
+</section>
+{% endblock %}

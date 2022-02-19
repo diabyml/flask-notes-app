@@ -2,6 +2,24 @@
 <section>
   <div class="container">
     <h2>Home Page</h2>
+
+    <ul>
+      {% for note in notes %}
+      <li style="border: 1px solid #000">
+        <div>
+          <a href="{{ url_for('note.view',note_id=note.id) }}">
+            <p>{{note.title}}</p>
+          </a>
+        </div>
+        <div>
+          <a href="{{ url_for('note.delete',note_id=note.id) }}">Delete</a>
+        </div>
+        <div>
+          <a href="{{ url_for('note.edit_note',note_id=note.id) }}">Edit</a>
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
   </div>
 </section>
 {% endblock %}
